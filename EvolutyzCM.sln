@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35506.116 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMServices", "CMServices\CMServices.csproj", "{6BFF5EC2-A03B-4183-83C6-42D013B4D096}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CM.DAC", "CM.DAC\CM.DAC.csproj", "{F709FCCC-20C6-46A1-A31E-ADAC6B671F51}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BFF5EC2-A03B-4183-83C6-42D013B4D096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BFF5EC2-A03B-4183-83C6-42D013B4D096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BFF5EC2-A03B-4183-83C6-42D013B4D096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BFF5EC2-A03B-4183-83C6-42D013B4D096}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F709FCCC-20C6-46A1-A31E-ADAC6B671F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F709FCCC-20C6-46A1-A31E-ADAC6B671F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F709FCCC-20C6-46A1-A31E-ADAC6B671F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F709FCCC-20C6-46A1-A31E-ADAC6B671F51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
