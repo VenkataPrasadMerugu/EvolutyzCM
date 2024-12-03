@@ -24,6 +24,11 @@ namespace CMServices
         public bool RegisterUser(User user)
         {
             return _contactRepository.RegisterUser(user);
-        }        
+        }
+        
+        public string Greetings(string name)
+        {
+            return $"Hi {name}....";
+        }
     }
 }

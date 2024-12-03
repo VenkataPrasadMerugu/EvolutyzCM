@@ -13,7 +13,7 @@ namespace CM.DAC
 
         public ContactRepository()
         {
-            this.connectionString = "Data Source=.\\sqlexpress;Initial Catalog=Evolutyz_CM;Integrated Security=True;TrustServerCertificate=True";
+            this.connectionString = "Data Source=.\\sqlexpress;Initial Catalog=Evolutyz_CM;User Id=Venkat;Password=Admin@123;TrustServerCertificate=True";
         }
         
             //"Data Source=.\\sqlexpress;Initial Catalog=Evolutyz_CM;Integrated Security=True;Trust Server Certificate=True";
