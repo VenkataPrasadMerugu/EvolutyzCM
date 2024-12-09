@@ -1,4 +1,5 @@
 ﻿using CM.DAC.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace CM.DAC
         }
         
             //"Data Source=.\\sqlexpress;Initial Catalog=Evolutyz_CM;Integrated Security=True;Trust Server Certificate=True";
-                
+              
         
 
         public bool RegisterUser(User user)
@@ -34,6 +35,28 @@ namespace CM.DAC
             }
 
             return false;
+        }
+
+
+        public int login(string username, string password)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT UserId FROM Data.Users WHERE UserName = @Username AND Password = @Password";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Username", username);
+                command.Parameters.AddWithValue("@Password", password); // Use hashed passwords in production
+
+                connection.Open();
+                var result = command.ExecuteScalar();
+
+                if (result != null)
+                {
+                    return Convert.ToInt32(result); 
+                }
+            }
+
+            return 0; 
         }
     }
 }

@@ -20,7 +20,25 @@ namespace CMServices
         [OperationContract]
         string Greetings(string name);
 
+        [OperationContract]
+        LoginResponse Login(string username, string password);
 
+    }
+
+    [DataContract]
+    public class LoginResponse
+    {
+        [DataMember]
+        public string SessionId { get; set; }
+
+        [DataMember]
+        public int UserId { get; set; }
+
+        [DataMember]
+        public bool Success { get; set; }
+
+        [DataMember]
+        public string Message { get; set; }
     }
 
     //[DataContract]

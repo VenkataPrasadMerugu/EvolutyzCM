@@ -83,7 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CM.DAC\CM.DAC.csproj">
-      <Project>{f709fccc-20c6-46a1-a31e-adac6b671f51}</Project>
+      <Project>{F709FCCC-20C6-46A1-A31E-ADAC6B671F51}</Project>
       <Name>CM.DAC</Name>
     </ProjectReference>
   </ItemGroup>

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMServices", "CMServices\CM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CM.DAC", "CM.DAC\CM.DAC.csproj", "{F709FCCC-20C6-46A1-A31E-ADAC6B671F51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManagerEvolutyz.Web", "ContactManagerEvolutyz.Web\ContactManagerEvolutyz.Web.csproj", "{B4EDA95B-D6FF-49A7-AB16-6B053724156C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F709FCCC-20C6-46A1-A31E-ADAC6B671F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F709FCCC-20C6-46A1-A31E-ADAC6B671F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F709FCCC-20C6-46A1-A31E-ADAC6B671F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4EDA95B-D6FF-49A7-AB16-6B053724156C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4EDA95B-D6FF-49A7-AB16-6B053724156C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4EDA95B-D6FF-49A7-AB16-6B053724156C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4EDA95B-D6FF-49A7-AB16-6B053724156C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

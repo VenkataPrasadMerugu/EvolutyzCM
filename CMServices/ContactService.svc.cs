@@ -15,6 +15,7 @@ namespace CMServices
     public class ContactService : IContactService
     {
         private readonly ContactRepository _contactRepository;
+        private static Dictionary<string, string> Sessions = new Dictionary<string, string>();
 
         public ContactService()
         {
@@ -25,7 +26,40 @@ namespace CMServices
         {
             return _contactRepository.RegisterUser(user);
         }
-        
+
+        public LoginResponse Login(string username, string password)
+        {
+            // Attempt to authenticate the user using the repository
+            var userId = _contactRepository.login(username, password);
+
+            if (userId > 0) // If a valid user ID is returned
+            {
+                // Generate a session ID
+                string sessionId = Guid.NewGuid().ToString();
+
+                // Store the session ID (you might want to save this in a database or cache)
+                Sessions[sessionId] = username; // Ensure `Sessions` is a defined dictionary
+
+                return new LoginResponse
+                {
+                    UserId = userId,            // The authenticated user's ID
+                    SessionId = sessionId,      // The generated session ID
+                    Success = true,             // Indicate success
+                    Message = "Login successful." // Success message
+                };
+            }
+
+            // Return failure response if authentication fails
+            return new LoginResponse
+            {
+                UserId = 0,                 // No valid user ID
+                SessionId = null,           // No session ID
+                Success = false,            // Indicate failure
+                Message = "Invalid username or password." // Failure message
+            };
+        }
+
+
         public string Greetings(string name)
         {
             return $"Hi {name}....";
