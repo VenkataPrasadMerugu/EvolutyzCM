@@ -31,8 +31,11 @@
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <!-- Left Navigation -->
                     <ul class="navbar-nav flex-grow-1">
+                         <asp:PlaceHolder ID="plhAddCategory" runat="server" Visible="false">
+                                <li class="nav-item"><a class="nav-link" runat="server" href="~/Category.aspx">Add Category</a></li>
+                            </asp:PlaceHolder>
                         <asp:PlaceHolder ID="plhListOfContacts" runat="server" Visible="false">
-                            <li class="nav-item"><a class="nav-link" runat="server" href="~/Contacts.aspx">List of Contacts</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/contact.aspx">Contacts</a></li>
                         </asp:PlaceHolder>
                     </ul>
                     <!-- Right Side -->
@@ -42,10 +45,10 @@
                         </asp:PlaceHolder>
                         <asp:PlaceHolder ID="plhLogout" runat="server" Visible="false">
                             <li class="nav-item">
-                                <span class="navbar-text">Welcome, <%: Session["Username"] ?? "User" %></span>
+                                <span class="navbar-text me-2">Welcome, <%: Session["Username"] ?? "User" %></span>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" runat="server" href="~/Logout.aspx">Logout</a>
+                                <a class="btn btn-danger btn-sm" runat="server" href="~/Logout.aspx">Logout</a>
                             </li>
                         </asp:PlaceHolder>
                     </ul>

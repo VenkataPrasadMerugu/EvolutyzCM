@@ -74,6 +74,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Properties\DataSources\CM.DAC.Models.Category.datasource" />
+    <Content Include="Properties\DataSources\CM.DAC.Models.Contact.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -86,6 +88,9 @@
       <Project>{F709FCCC-20C6-46A1-A31E-ADAC6B671F51}</Project>
       <Name>CM.DAC</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

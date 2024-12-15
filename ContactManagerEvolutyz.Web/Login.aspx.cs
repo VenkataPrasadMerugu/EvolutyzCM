@@ -1,4 +1,4 @@
-﻿using ContactManagerEvolutyz.Web.ContactService;
+﻿using ContactManagerEvolutyz.Web.ContactServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;

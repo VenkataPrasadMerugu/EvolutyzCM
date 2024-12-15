@@ -101,19 +101,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
-    <None Include="Connected Services\ContactService\configuration91.svcinfo" />
-    <None Include="Connected Services\ContactService\configuration.svcinfo" />
-    <Content Include="Connected Services\ContactService\ContactManagerEvolutyz.Web.ContactService.LoginResponse.datasource">
+    <Content Include="Category.aspx" />
+    <None Include="Connected Services\ContactServices\configuration91.svcinfo" />
+    <None Include="Connected Services\ContactServices\configuration.svcinfo" />
+    <Content Include="Connected Services\ContactServices\ContactManagerEvolutyz.Web.ContactServices.Category.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\ContactService\ContactService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ContactService\Reference.svcmap">
+    <Content Include="Connected Services\ContactServices\ContactManagerEvolutyz.Web.ContactServices.Contact.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ContactServices\ContactManagerEvolutyz.Web.ContactServices.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ContactServices\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Contact.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -164,16 +169,20 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <None Include="Connected Services\ContactService\ContactService.wsdl" />
-    <None Include="Connected Services\ContactService\ContactService.xsd">
+    <None Include="Connected Services\ContactServices\ContactService.wsdl" />
+    <None Include="Connected Services\ContactServices\ContactService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ContactService\ContactService1.xsd">
+    <None Include="Connected Services\ContactServices\ContactService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ContactService\ContactService2.xsd">
+    <None Include="Connected Services\ContactServices\ContactService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ContactServices\ContactService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\EvolutyzCM.WEB.pubxml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -208,20 +217,34 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Connected Services\ContactService\Reference.cs">
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Connected Services\ContactServices\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -287,7 +310,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ContactService\" />
+    <WCFMetadataStorage Include="Connected Services\ContactServices\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

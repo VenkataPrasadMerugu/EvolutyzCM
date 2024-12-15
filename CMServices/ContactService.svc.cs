@@ -29,40 +29,128 @@ namespace CMServices
 
         public LoginResponse Login(string username, string password)
         {
-            // Attempt to authenticate the user using the repository
+            
             var userId = _contactRepository.login(username, password);
 
-            if (userId > 0) // If a valid user ID is returned
+            if (userId > 0) 
             {
-                // Generate a session ID
+               
                 string sessionId = Guid.NewGuid().ToString();
 
-                // Store the session ID (you might want to save this in a database or cache)
-                Sessions[sessionId] = username; // Ensure `Sessions` is a defined dictionary
+                
+                Sessions[sessionId] = username; 
 
                 return new LoginResponse
                 {
-                    UserId = userId,            // The authenticated user's ID
-                    SessionId = sessionId,      // The generated session ID
-                    Success = true,             // Indicate success
-                    Message = "Login successful." // Success message
+                    UserId = userId,            
+                    SessionId = sessionId,      
+                    Success = true,             
+                    Message = "Login successful." 
                 };
             }
 
-            // Return failure response if authentication fails
+            
             return new LoginResponse
             {
-                UserId = 0,                 // No valid user ID
-                SessionId = null,           // No session ID
-                Success = false,            // Indicate failure
-                Message = "Invalid username or password." // Failure message
+                UserId = 0,                
+                SessionId = null,         
+                Success = false,           
+                Message = "Invalid username or password." 
             };
         }
 
+        public void Logout(string sessionId)
+        {
+            if (!string.IsNullOrEmpty(sessionId))
+            {
+                // Remove the session from the dictionary if it exists
+                if (Sessions.ContainsKey(sessionId))
+                {
+                    Sessions.Remove(sessionId);
+                }
+            }
+        }
+
+        public bool AddCategory(string sessionId, string categoryName)
+        {
+            ValidateSession(sessionId);
+
+            string username = Sessions[sessionId];
+            int userId = _contactRepository.GetUserIdByUsername(username);
+
+            return _contactRepository.AddCategory(categoryName, userId);
+        }
+
+        public List<Category> GetCategories(string sessionId)
+        {
+            ValidateSession(sessionId);
+
+            string username = Sessions[sessionId];
+            int userId = _contactRepository.GetUserIdByUsername(username);
+
+            return _contactRepository.GetCategoriesByUser(userId);
+        }
+
+        public bool DeleteCategory(string sessionId, int categoryID)
+        {
+            ValidateSession(sessionId);
+
+            string username = Sessions[sessionId];
+            int userId = _contactRepository.GetUserIdByUsername(username);
+
+            return _contactRepository.DeleteCategory(categoryID, userId);
+        }
+
+        public bool UpdateCategory(string sessionId, int categoryId, string categoryName)
+        {
+            ValidateSession(sessionId);
+
+            string username = Sessions[sessionId];
+            int userId = _contactRepository.GetUserIdByUsername(username);
+
+            return _contactRepository.UpdateCategory(categoryId, categoryName, userId);
+        }
 
         public string Greetings(string name)
         {
             return $"Hi {name}....";
+        }
+
+        public List<Contact> GetContacts(string sessionId)
+        {
+            ValidateSession(sessionId);
+            string username = Sessions[sessionId];
+            int userId = _contactRepository.GetUserIdByUsername(username);
+            return _contactRepository.GetContacts(userId);
+        }
+
+        public bool AddContact(string sessionId, Contact contact)
+        {
+            ValidateSession(sessionId);
+            string username = Sessions[sessionId];
+            int userId = _contactRepository.GetUserIdByUsername(username);
+            contact.UserID = userId;
+            return _contactRepository.AddContact(contact);
+        }
+
+        public bool UpdateContact(string sessionId, Contact contact)
+        {
+            ValidateSession(sessionId);
+            return _contactRepository.UpdateContact(contact);
+        }
+
+        public bool DeleteContact(string sessionId, int contactId)
+        {
+            ValidateSession(sessionId);
+            return _contactRepository.DeleteContact(contactId);
+        }
+
+        private void ValidateSession(string sessionId)
+        {
+            if (!Sessions.ContainsKey(sessionId))
+            {
+                throw new FaultException("Invalid session.");
+            }
         }
     }
 }

@@ -11,52 +11,43 @@ namespace ContactManagerEvolutyz.Web
 {
 
 
-    public partial class SiteMaster
+    public partial class Category
     {
 
         /// <summary>
-        /// plhAddCategory control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder plhAddCategory;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
-        /// plhListOfContacts control.
+        /// txtCategoryName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder plhListOfContacts;
+        protected global::System.Web.UI.WebControls.TextBox txtCategoryName;
 
         /// <summary>
-        /// plhLogin control.
+        /// btnAddCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder plhLogin;
+        protected global::System.Web.UI.WebControls.Button btnAddCategory;
 
         /// <summary>
-        /// plhLogout control.
+        /// gvCategories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder plhLogout;
-
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.GridView gvCategories;
     }
 }

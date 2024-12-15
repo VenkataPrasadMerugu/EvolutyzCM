@@ -11,7 +11,7 @@ namespace ContactManagerEvolutyz.Web
 {
 
 
-    public partial class Contact
+    public partial class Register
     {
 
         /// <summary>

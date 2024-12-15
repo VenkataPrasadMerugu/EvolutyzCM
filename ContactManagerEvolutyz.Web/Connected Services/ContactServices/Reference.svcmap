@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="11bc0ad1-4166-4383-8104-16f6d57631ee" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://www.cmservices.com:70/ContactService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ContactService.xsd" MetadataType="Schema" ID="5fed1fa5-5f62-4ca6-afed-18974f2da774" SourceId="1" SourceUrl="http://www.cmservices.com:70/ContactService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ContactService1.xsd" MetadataType="Schema" ID="f30815a7-e083-47d4-8271-4fbf5bdf9966" SourceId="1" SourceUrl="http://www.cmservices.com:70/ContactService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ContactService.wsdl" MetadataType="Wsdl" ID="d05422e2-2011-4723-b702-a324c39a89cf" SourceId="1" SourceUrl="http://www.cmservices.com:70/ContactService.svc?wsdl" />
+    <MetadataFile FileName="ContactService2.xsd" MetadataType="Schema" ID="a941a64b-b432-499c-b5cd-3895ea1e71d8" SourceId="1" SourceUrl="http://www.cmservices.com:70/ContactService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ContactService3.xsd" MetadataType="Schema" ID="1cdbfc09-4cad-478c-bfe9-baff33871476" SourceId="1" SourceUrl="http://www.cmservices.com:70/ContactService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

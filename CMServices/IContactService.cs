@@ -23,6 +23,33 @@ namespace CMServices
         [OperationContract]
         LoginResponse Login(string username, string password);
 
+        [OperationContract]
+        void Logout(string sessionId);
+
+        [OperationContract]
+        bool AddCategory(string sessionId, string categoryName);
+                
+        [OperationContract]
+        List<Category> GetCategories(string sessionId);
+
+        [OperationContract]
+        bool DeleteCategory(string sessionId, int categoryID);
+
+        [OperationContract]
+        List<Contact> GetContacts(string sessionId);
+
+        [OperationContract]
+        bool AddContact(string sessionId, Contact contact);
+
+        [OperationContract]
+        bool UpdateContact(string sessionId, Contact contact);
+
+        [OperationContract]
+        bool DeleteContact(string sessionId, int contactId);
+
+        [OperationContract]
+        bool UpdateCategory(string sessionId, int categoryId, string categoryName);
+
     }
 
     [DataContract]
@@ -41,20 +68,4 @@ namespace CMServices
         public string Message { get; set; }
     }
 
-    //[DataContract]
-    //public class User
-    //{
-    //    [DataMember]
-    //    public int UserID { get; set; }
-    //    [DataMember]
-    //    public string UserName { get; set; }
-    //    [DataMember]
-    //    public string Name { get; set; }
-    //    [DataMember]
-    //    public string Password { get; set; }
-    //    [DataMember]
-    //    public string Email { get; set; }
-    //    [DataMember]
-    //    public bool Active { get; set; }
-    //}
 }

@@ -19,14 +19,16 @@ namespace ContactManagerEvolutyz.Web
                     // User is logged in
                     plhLogin.Visible = false;
                     plhLogout.Visible = true;
-                    plhListOfContacts.Visible = true; // Show the "List of Contacts" link
+                    plhListOfContacts.Visible = true;
+                    plhAddCategory.Visible = true;
                 }
                 else
                 {
                     // User is not logged in
                     plhLogin.Visible = true;
                     plhLogout.Visible = false;
-                    plhListOfContacts.Visible = false; // Hide the "List of Contacts" link
+                    plhListOfContacts.Visible = false;
+                    plhAddCategory.Visible = false;
                 }
             }
         }
